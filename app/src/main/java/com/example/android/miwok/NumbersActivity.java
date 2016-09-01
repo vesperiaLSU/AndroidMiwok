@@ -2,7 +2,10 @@ package com.example.android.miwok;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.ArrayAdapter;
+import android.widget.GridView;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -22,12 +25,16 @@ public class NumbersActivity extends AppCompatActivity {
         words.add("four");
         words.add("five");
 
-        LinearLayout rootView = (LinearLayout) findViewById(R.id.rootView);
-        for (String s : words) {
-            TextView wordView = new TextView(this);
-            wordView.setText(s);
-            rootView.addView(wordView);
-        }
+//        LinearLayout rootView = (LinearLayout) findViewById(R.id.rootView);
+//        for (String s : words) {
+//            TextView wordView = new TextView(this);
+//            wordView.setText(s);
+//            rootView.addView(wordView);
+//        }
+
+        ArrayAdapter<String> itemsAdapter = new ArrayAdapter<>(this, R.layout.list_item, words);
+        ListView listView = (ListView) findViewById(R.id.list);
+        listView.setAdapter(itemsAdapter);
     }
 }
 
