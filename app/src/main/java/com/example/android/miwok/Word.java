@@ -8,20 +8,25 @@ public class Word {
     private String miwok;
 
     // The image resource ID
-    private int src;
+    private int imageID;
+
+    // The sound resource ID
+    private int soundID;
 
     private static final int NO_IMAGE_PROVIDED = -1;
 
-    public Word(String eng, String miwok) {
+    public Word(String eng, String miwok, int soundID) {
         english = eng;
         this.miwok = miwok;
-        src = NO_IMAGE_PROVIDED;
+        imageID = NO_IMAGE_PROVIDED;
+        this.soundID = soundID;
     }
 
-    public Word(String eng, String miwok, int src) {
+    public Word(String eng, String miwok, int imageID, int soundID) {
         english = eng;
         this.miwok = miwok;
-        this.src = src;
+        this.imageID = imageID;
+        this.soundID = soundID;
     }
 
     public String getEnglish() {
@@ -33,10 +38,14 @@ public class Word {
     }
 
     public int getImageID() {
-        return src;
+        return imageID;
     }
 
     public boolean hasImage() {
-        return src != NO_IMAGE_PROVIDED;
+        return imageID != NO_IMAGE_PROVIDED;
+    }
+
+    public int getSoundID() {
+        return soundID;
     }
 }
