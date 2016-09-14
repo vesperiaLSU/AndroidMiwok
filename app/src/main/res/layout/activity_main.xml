@@ -11,7 +11,7 @@
     <TextView
         android:id="@+id/numbers"
         style="@style/CategoryStyle"
-        android:background="?android:selectableItemBackground"
+        android:background="@color/category_numbers"
         android:text="@string/category_numbers" />
 
     <TextView
