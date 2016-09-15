@@ -10,7 +10,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -66,21 +65,21 @@ public class NumbersFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        View rootView = inflater.inflate(R.layout.activity_numbers, container, false);
+        View rootView = inflater.inflate(R.layout.word_list, container, false);
 
         audioManager = (AudioManager) getActivity().getSystemService(Context.AUDIO_SERVICE);
 
         final List<Word> words = new ArrayList<>();
-        words.add(new Word("one", "1", R.drawable.number_one, R.raw.wishing));
-        words.add(new Word("two", "2", R.drawable.number_two, R.raw.wishing));
-        words.add(new Word("three", "3", R.drawable.number_three, R.raw.wishing));
-        words.add(new Word("four", "4", R.drawable.number_four, R.raw.wishing));
-        words.add(new Word("five", "5", R.drawable.number_five, R.raw.wishing));
-        words.add(new Word("six", "6", R.drawable.number_six, R.raw.wishing));
-        words.add(new Word("seven", "7", R.drawable.number_seven, R.raw.wishing));
-        words.add(new Word("eight", "8", R.drawable.number_eight, R.raw.wishing));
-        words.add(new Word("nine", "9", R.drawable.number_nine, R.raw.wishing));
-        words.add(new Word("ten", "10", R.drawable.number_ten, R.raw.wishing));
+        words.add(new Word(R.string.num_1, R.string.num_1d, R.drawable.number_one, R.raw.wishing));
+        words.add(new Word(R.string.num_2, R.string.num_2d, R.drawable.number_two, R.raw.wishing));
+        words.add(new Word(R.string.num_3, R.string.num_3d, R.drawable.number_three, R.raw.wishing));
+        words.add(new Word(R.string.num_4, R.string.num_4d, R.drawable.number_four, R.raw.wishing));
+        words.add(new Word(R.string.num_5, R.string.num_5d, R.drawable.number_five, R.raw.wishing));
+        words.add(new Word(R.string.num_6, R.string.num_6d, R.drawable.number_six, R.raw.wishing));
+        words.add(new Word(R.string.num_7, R.string.num_7d, R.drawable.number_seven, R.raw.wishing));
+        words.add(new Word(R.string.num_8, R.string.num_8d, R.drawable.number_eight, R.raw.wishing));
+        words.add(new Word(R.string.num_9, R.string.num_9d, R.drawable.number_nine, R.raw.wishing));
+        words.add(new Word(R.string.num_10, R.string.num_10d, R.drawable.number_ten, R.raw.wishing));
 
         WordAdapter wordAdapter = new WordAdapter(getActivity(), words, R.color.category_numbers);
         ListView listView = (ListView) rootView.findViewById(R.id.list);
